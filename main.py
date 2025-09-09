@@ -30,4 +30,13 @@ confusion_matrix = confusion_matrix(y_test, y_pred)
 sns.heatmap(confusion_matrix)
 plt.xlabel("Previsto")
 plt.ylabel("Real")
+#plt.show()
+
+#Visualizar a árvore de decisão.
+from sklearn.tree import plot_tree
+fig, ax = plt.subplots(figsize=(20, 20))
+_ = plot_tree(model, 
+            feature_names=iris.feature_names,
+            class_names=iris.target_names, 
+            filled=True, rounded=True, ax=ax)
 plt.show()
